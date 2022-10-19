@@ -2,11 +2,24 @@
 :root {
   --main-color: #2196f3;
   --alt-main-color: #1787e0;
+  --main-transition: 0.3s;
 }
 /* End Variables */
 /* Start Components */
+.main-hover-effect{
+  color: var(--main-color);
+  transition: var(--main-transition);
+}
+.main-hover-effect:hover {
+  color: var(--alt-main-color);
+}
 /* End Components */
 /* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 html {
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
@@ -38,7 +51,6 @@ input:focus {
   padding-left: 15px; /* For mobile */
   padding-right: 15px; /* For mobile */
   margin: 0 auto;
-  background-color: orange;
 }
 /* Small Screens */
 @media (min-width: 768px) {
@@ -49,7 +61,7 @@ input:focus {
 /* Medium Screens */
 @media (min-width: 992px) {
   .container {
-    width: 9700px;
+    width: 970px;
   }
 }
 /* Large Screens */
@@ -59,3 +71,173 @@ input:focus {
   }
 }
 /* End Global Rules */
+/* Start Header */
+header {
+  background-color: white;
+  box-shadow: 0 0 10px #ddd;
+  position: relative;
+}
+header .container {
+  /* Start Local variable */
+  --logo-height:75px;
+  /* End Local variable */
+  flex-wrap: wrap;
+  position: relative;
+}
+header .container .logo {
+  font-size: 26px;
+  font-weight: bold;
+  height: var(--logo-height);
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  header .container .logo {
+    width: 100%;
+    height: calc(var(--logo-height) - 20px);
+  }
+}
+header .container  .main-nav {
+  display: flex;
+}
+@media (max-width: 767px) {
+  header .container  .main-nav {
+    margin: 0 auto;
+  }
+}
+header .container  .main-nav > li > a {
+  justify-content: center;
+  height: var(--logo-height);
+  padding: 0 30px;
+  transition: var(--main-transition);
+  position:relative;
+  overflow: hidden;
+  color: black;
+}
+@media (max-width: 767px) {
+  header .container  .main-nav > li > a {
+    height: calc(var(--logo-height) - 25px);
+    padding: 0 15px;
+  }
+}
+/* Fold display */
+@media (max-width: 280px) {
+  header .container .logo {
+    font-size: 20px;
+  }
+  header .container  .main-nav > li > a {
+    padding: 0 8px;
+    font-size: 13px;
+  }
+}
+header .container  .main-nav > li > a:hover {
+  background-color: #f5f5f5;
+  color: var(--main-color);
+}
+
+header .container  .main-nav > li > a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: -100%;
+  height: 2px;
+  background-color: var(--main-color);
+  transition: var(--main-transition);
+}
+header .container  .main-nav > li > a:hover::before {
+  left: 0;
+}
+
+/* End Header */
+/* Start Landing */
+.landing {
+  position: relative;
+}
+.landing::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ECECEC;
+  transform: skewY(-6deg);
+  transform-origin: top left;
+  z-index: -1;
+}
+.landing .container {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 75px);
+  padding-bottom: 100px;
+}
+@media (max-width: 767px) {
+  .landing .container {
+    min-height: calc(100vh - 105px);
+  }
+}
+.landing .container .landing-text{
+  flex: 1;
+}
+@media (max-width: 991px) {
+  .landing .container .landing-text {
+    text-align: center;
+  }
+}
+.landing .container .landing-text h1{
+  font-size: 33px;
+  font-weight: 800;
+}
+.landing .container .landing-text p{
+  color: rgb(0, 0, 0);
+  line-height: 1.6;
+  margin-bottom: 0;
+  font-size: 18px;
+  max-width: 500px;
+}
+@media (max-width: 991px) {
+  .landing .container .landing-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.landing .container .landing-image {
+  width: 500px;
+  animation: up-down infinite 2s;
+}
+@media (max-width: 991px) {
+  .landing .container .landing-image { 
+    display: none;
+  }
+}
+.landing .go-down {
+  bottom: 20px;
+  animation: bouncing infinite 2s;
+}
+/* End Landing */
+/* Start Animation */
+@keyframes up-down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform:translateY(-20px)
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes bouncing {
+  0%,
+  10%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40%,60% {
+    transform: translateY(-15px)
+  }
+}
+/* End Animation */
