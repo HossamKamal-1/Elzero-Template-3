@@ -798,7 +798,95 @@ header .mega-menu .links li a{
   text-transform: uppercase;
 }
 /* End team members  */
-
+/* Start services */
+.services {
+  padding-top: var(--main-section-padding);
+  padding-bottom: var(--main-section-padding);
+  background-color: #ECECEC;
+}
+.services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.services .container .service-box {
+  box-shadow: 
+  0 12px 20px 0 rgb(0 0 0 / 13%), 
+  0 2px 4px 0 rgb(0 0 0 / 12%);
+  background-color: white;
+  padding-top: 30px;
+  position: relative;
+  counter-increment: services;
+  transition: var(--main-transition);
+}
+.services .container .service-box:hover {
+  transform: translateY(-10px);
+}
+.services .container .service-box::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  top: -3px;
+  left: 50%;
+  background-color: var(--main-color);
+  transform: translateX(-50%);
+  transition: var(--main-transition);
+}
+.services .container .service-box:hover::before {
+  width: 100%;
+}
+.services .container .service-box .box-text {
+  text-align: center;
+}
+.services .container .service-box .box-text i {
+  font-size: 70px;
+  color: #D5D5D5;
+}
+.services .container .service-box .box-text h3 {
+  margin: 20px 0 40px;
+  text-transform: capitalize;
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 25px;
+}
+.services .container .service-box .details {
+  position: relative;
+  background-color: #f9f9f9;
+  padding: 15px;
+  text-align: right;
+}
+.services .container .service-box .details::before {
+  content: "0"counter(services);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  font-size: 28px;
+  color: white;
+  font-weight: bold;
+  padding-right: 20px;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: var(--main-color);
+}
+.services .container .service-box .details::after {
+  content: "";
+  position: absolute;
+  background-color: #d5d5d5;
+  top: 0;
+  left: 80px;
+  width: 50px;
+  height: calc(100% + 0.4px);
+  transform: skewX(-30deg)
+}
+.services .container .service-box .details a {
+  display: inline-block;
+  text-transform: capitalize;
+}
+/* End services */
 /* Start Animation */
 @keyframes up-down {
   0% {
