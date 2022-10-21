@@ -27,6 +27,7 @@
   position: relative;
   z-index: 1;
   transition: var(--main-transition);
+  text-transform: uppercase;
 }
 .main-title::before,
 .main-title::after {
@@ -288,14 +289,14 @@ header .mega-menu .links li::before {
 header .mega-menu .links li:hover::before{
   width: 100%;
 }
-header .mega-menu .links li i,a {
+header .mega-menu .links li i {
   color: var(--main-color);
   font-size: 18px;
-}
-header .mega-menu .links li i {
   margin-right: 10px;
 }
+
 header .mega-menu .links li a{
+  color:var(--main-color);
   padding: 15px 15px 15px 0;
   display: inline-block;
 }
@@ -481,9 +482,323 @@ header .mega-menu .links li a{
 }
 .gallery .container .gallery-box .image-box:hover img {
   transform: rotate(2deg) scale(1.1);
-
 }
 /* End Gallery */
+/* Start Features */
+.features {
+  padding-top: var(--main-section-padding);
+  padding-bottom: var(--main-section-padding);
+}
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+.features .container .feature-box{
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  text-align: center;
+}
+.features .container .feature-box .image{
+  position: relative;
+  font-size: 0;
+  overflow: hidden;
+}
+.features .container .feature-box .image::before {
+  content: "";
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.features .container .feature-box:first-child .image::before {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+.features .container .feature-box:nth-child(2) .image::before {
+  background-color:#0097854c ;
+}
+.features .container .feature-box:last-child .image::before {
+  background-color:#07a6f550 ;
+}
+.features .container .feature-box .image::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-style: solid;
+  border-width: 0px 0px 134px 500px;
+  border-color: transparent transparent white transparent;
+  z-index: 1;
+  transition: var(--main-transition);
+}
+.features .container .feature-box:hover .image::after {
+  border-width: 0px 400px 134px 500px;
+}
+.features .container .feature-box .image img{
+  max-width: 100%;
+}
+.features .container .feature-box h3{
+  font-size: 26px;
+  font-weight: bold;
+  width: fit-content;
+  padding: 0 0 15px;
+  margin: 30px auto 15px;
+  position: relative;
+}
+.features .container .feature-box h3::before {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 4px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.features .container .feature-box:first-child h3::before {
+  background-color: #F64436;
+}
+.features .container .feature-box:nth-child(2) h3::before {
+  background-color: #04968A;
+}
+.features .container .feature-box:last-child h3::before {
+  background-color: #00A9F3;
+}
+.features .container .feature-box p{
+  margin-bottom: 30px;
+  line-height: 1.7;
+  padding: 0 10px;
+  color: #888;
+}
+.features .container .feature-box a{
+  display: block;
+  width: fit-content;
+  padding: 10px 20px;
+  border-width: 3px;
+  border-style: solid;
+  margin: 0 auto 30px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-size: 200% 100%;
+  background-position: bottom right;
+  transition: var(--main-transition);
+}
+.features .container .feature-box:first-child a {
+  color: #F64436;
+  border-color: #F64436;
+  background-image: linear-gradient(to right, #F64436 50%, white 50%);
+
+}
+.features .container .feature-box:nth-child(2) a {
+  color: #04968A;
+  border-color: #04968A;
+  background-image: linear-gradient(to right, #04968A 50%, white 50%);
+}
+.features .container .feature-box:last-child a {
+  color: #00A9F3;
+  border-color: #00A9F3;
+  background-image: linear-gradient(to right, #00A9F3 50%, white 50%);
+
+}
+.features .container .feature-box:hover a {
+  background-position: bottom left;
+  color: white;
+}
+/* End Features */
+/* Start Testimonials */
+.testimonials {
+  padding-top: var(--main-section-padding);
+  padding-bottom: var(--main-section-padding);
+  background-color: #ececec;
+}
+.testimonials .container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.testimonials .container .box {
+  background-color: white;
+  position: relative;
+  margin-bottom: 15px;
+  padding: 20px;
+}
+@media (max-width: 767px) {
+  .testimonials .container .box {
+    flex-basis: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .testimonials .container {
+    gap: 28px;
+  }
+  .testimonials .container .box {
+    flex-basis: 48%;
+  }
+}
+@media (min-width: 991px) {
+  .testimonials .container .box {
+    flex-basis: 48%;
+  }
+  
+}
+@media (min-width: 1200px) {
+  .testimonials .container .box {
+    flex-basis: 31%;
+  }
+}
+.testimonials .container .box .image {
+  padding: 8px;
+  background-color: #ececec;
+  border-radius: 50%;
+  font-size: 0;
+  position: absolute;
+  top: -40.5px; 
+  right: 0;
+}
+.testimonials .container .box .image img {
+  width: 65px;
+  max-width: 100%;
+  border-radius: 50%;
+}
+.testimonials .container .box .profile-name {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.testimonials .container .box .job {
+  color: #555;
+  text-transform: capitalize;
+  display: block;
+  margin: 10px 0;
+}
+.testimonials .container .box .stars {
+  display: flex;
+  gap: 4px
+}
+.testimonials .container .box .stars .filled{
+  color: #FFC205;
+}
+.testimonials .container .box p {
+  line-height: 1.7;
+  color: #777;
+}
+/* End Testimonials */
+/* Start team members  */
+.team-members {
+  padding-top: var(--main-section-padding);
+  padding-bottom: var(--main-section-padding);
+  background-color: white;
+}
+.team-members .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+@media (max-width: 320px) {
+  .team-members .container {
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+
+  }
+  
+}
+.team-members .container .team-member-box {
+  position: relative;
+  background-color: white;
+  padding-top: 50px;
+  z-index: 2;
+}
+.team-members .container .team-member-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20%;
+  width: 80%;
+  height: 100%;
+  background-color: #F3F3F3;
+  border-radius: 5px;
+  z-index: -1;
+  
+}
+.team-members .container .team-member-box::after {
+  content: "";
+  position: absolute;
+  background-color: #e4e4e4;
+  border-radius: 5px;
+  top: 0;
+  right:0;
+  width: 0;
+  height: 100%;
+  transition: var(--main-transition);
+  z-index: -1;
+}
+.team-members .container .team-member-box:hover::after {
+  width:80%;
+}
+.team-members .container .team-member-box .info {
+  display: flex;
+  align-items: center;
+  z-index: 30;
+}
+.team-members .container .team-member-box .info img {
+  max-width: 85%;
+  border-radius: 8px;
+  transition: var(--main-transition);
+}
+.team-members .container .team-member-box:hover img{
+  filter: grayscale(100%);
+}
+.team-members .container .team-member-box .info .social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+.team-members .container  .info .social  li a i{
+  color: #777;
+  transition: var(--main-transition);
+}
+.team-members .container  .info .social  li a {
+  padding: 5px;
+}
+.team-members .container  .info .social  li a:hover i{
+  color: var(--main-color);
+  
+}
+.team-members .container .team-member-box .text {
+  padding-left: 90px;
+}
+@media (min-width: 992px) {
+  .team-members .container .team-member-box .text {
+    padding-left: 110px;
+  }
+}
+@media (min-width: 1200px) {
+  .team-members .container .team-member-box .text {
+    padding-left: 90px;
+
+  }
+}
+.team-members .container .team-member-box .text .member-name {
+  font-weight: bold;
+  font-size: 22px;
+  text-transform: capitalize;
+  color: var(--main-color);
+  margin: 10px 0;
+  transition: var(--main-transition);
+}
+.team-members .container .team-member-box:hover .text .member-name {
+  color:#777
+}
+.team-members .container .team-member-box .text p {
+  margin: 0 0 20px ;
+}
+.team-members .container .team-member-box .text p::first-letter {
+  text-transform: uppercase;
+}
+/* End team members  */
+
 /* Start Animation */
 @keyframes up-down {
   0% {
