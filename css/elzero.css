@@ -887,6 +887,54 @@ header .mega-menu .links li a{
   text-transform: capitalize;
 }
 /* End services */
+/* Start skills */
+.skills {
+  padding-top: var(--main-section-padding);
+  padding-bottom: var(--main-section-padding);
+}
+.skills .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+}
+
+.skills .container .image {
+  font-size: 0;
+}
+@media (max-width: 991px) {
+  .skills .container .image {
+    display: none;
+  }
+  
+}
+.skills .container .image img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.skills .container .skill h3{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+.skills .container .skill h3 span{
+  border: 1px solid #CCCCCC;
+  font-size: 14px;
+  color: var(--main-color);
+  border-radius: 5px;
+  padding: 5px;
+}
+.skills .container .skill .progress{
+  background-color: #EEEEEE;
+  height: 30px;
+  width: 100%;
+}
+.skills .container .skill .progress span{
+  display: block;
+  height: 100%;
+  background-color: var(--main-color);
+}
+/* End skills */
 /* Start Animation */
 @keyframes up-down {
   0% {
