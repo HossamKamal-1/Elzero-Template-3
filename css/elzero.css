@@ -2,6 +2,7 @@
 :root {
   --main-color: #2196f3;
   --alt-main-color: #1787e0;
+  --section-background: #ECECEC;
   --main-transition: 0.3s;
   --main-section-padding: 80px;
 }
@@ -312,7 +313,7 @@ header .mega-menu .links li a{
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #ECECEC;
+  background-color: var(--section-background);
   transform: skewY(-6deg);
   transform-origin: top left;
   z-index: -1;
@@ -441,7 +442,7 @@ header .mega-menu .links li a{
   padding-top: var(--main-section-padding);
   padding-bottom: var(--main-section-padding);
   position: relative;
-  background-color: #ececec;
+  background-color: var(--section-background);
 }
 .gallery .container {
   display: grid;
@@ -609,7 +610,7 @@ header .mega-menu .links li a{
 .testimonials {
   padding-top: var(--main-section-padding);
   padding-bottom: var(--main-section-padding);
-  background-color: #ececec;
+  background-color: var(--section-background);
 }
 .testimonials .container {
   display: flex;
@@ -649,7 +650,7 @@ header .mega-menu .links li a{
 }
 .testimonials .container .box .image {
   padding: 8px;
-  background-color: #ececec;
+  background-color: var(--section-background);
   border-radius: 50%;
   font-size: 0;
   position: absolute;
@@ -802,7 +803,7 @@ header .mega-menu .links li a{
 .services {
   padding-top: var(--main-section-padding);
   padding-bottom: var(--main-section-padding);
-  background-color: #ECECEC;
+  background-color: var(--section-background);
 }
 .services .container {
   display: grid;
@@ -939,7 +940,7 @@ header .mega-menu .links li a{
 .work-steps {
   padding-top: var(--main-section-padding);
   padding-bottom: var(--main-section-padding);
-  background-color: #ECECEC;
+  background-color: var(--section-background);
   
 }
 .work-steps .container {
@@ -1158,7 +1159,7 @@ header .mega-menu .links li a{
 .pricing {
   padding-top: var(--main-section-padding);
   padding-bottom: var(--main-section-padding);
-  background-color: #ECECEC;
+  background-color: var(--section-background);
 
 }
 .pricing .container {
@@ -1315,8 +1316,85 @@ header .mega-menu .links li a{
   border: 2px solid var(--alt-main-color);
   color: white;
 }
-
 /* End pricing */
+/* Start videos */
+.videos {
+  padding-top: var(--main-section-padding);
+  padding-bottom: var(--main-section-padding);
+}
+.videos .videos-content{
+  display: flex;
+  background-color: var(--section-background);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+@media (max-width: 991px) {
+  .videos .videos-content {
+    flex-direction: column;
+  }
+  
+}
+.videos .videos-content .top-videos-list{
+  min-width: 300px;
+  background-color: white;
+}
+.videos .videos-content .top-videos-list .title{
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--section-background);
+  padding: 15px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.videos .videos-content .top-videos-list i{
+  transition: var(--main-transition);
+}
+.videos .videos-content .top-videos-list i:hover {
+  color: var(--alt-main-color);
+}
+.videos .videos-content .video-list {
+  max-height: 610.2px;
+  overflow-y: auto;
+}
+.videos .videos-content .video-list li {
+  padding: 10px 15px;
+  text-transform: capitalize;
+  border-top: 1px solid var(--section-background);
+  transition: var(--main-transition);
+  cursor: pointer;
+}
+.videos .videos-content .video-list li:hover {
+  color: var(--main-color);
+}
+.videos .videos-content .video-list li .time {
+  display: block;
+  margin-top: 10px;
+  color: #777;
+  text-align: right;
+}
+.videos .videos-content .preview {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.videos .videos-content .preview img{
+  max-width: 100%;
+}
+.videos .videos-content .preview .video-info {
+  margin-top: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
+  max-height: 100px;
+  overflow-y: auto;
+}
+.videos .videos-content .preview .video-info .comment{
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+/* End videos */
 /* Start Animation */
 @keyframes up-down {
   0% {
