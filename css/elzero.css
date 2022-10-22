@@ -958,7 +958,6 @@ header .mega-menu .links li a{
   }
   
 }
-
 .work-steps .container .image img {
   max-width: 100%;
   
@@ -1048,12 +1047,10 @@ header .mega-menu .links li a{
   .events .container img {
     width: 300px;
   }
-  
 }
 .events .container .info {
   flex: 1;
   text-align: center;
-
 }
 .events .container .info .count {
   display: flex;
@@ -1157,6 +1154,169 @@ header .mega-menu .links li a{
   background-color: var(--alt-main-color);
 }
 /* End events */
+/* Start pricing */
+.pricing {
+  padding-top: var(--main-section-padding);
+  padding-bottom: var(--main-section-padding);
+  background-color: #ECECEC;
+
+}
+.pricing .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.pricing .container .plan {
+  background-color: white;
+  z-index: 1;
+}
+.pricing .container .plan.popular {
+  position: relative;
+}
+@media (min-width: 768px) {
+  .pricing .container .plan.popular {
+    top: -20px;
+  }
+}
+.pricing .container .plan.popular .label {
+  writing-mode: vertical-lr;
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  background-color: var(--main-color);
+  padding: 10px 10px 30px 10px;
+  top: 0;
+  right: 20px;
+}
+.pricing .container .plan.popular .label::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-style: solid;
+  border-width: 19.3px;
+  border-color: transparent transparent white transparent;
+  transition: var(--main-transition);
+}
+@media (max-width: 767px) {
+  .pricing .container .plan {
+    flex-basis: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .pricing .container .plan {
+    flex-basis: 30%;
+  }
+}
+.pricing .container .plan .plan-head {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+.pricing .container .plan .plan-head::before,
+.pricing .container .plan .plan-head::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background-color: #2195f322;
+  transition: var(--main-transition);
+}
+.pricing .container .plan .plan-head::before {
+  width: 100%;
+  height: 0%;
+  right: 0;
+  top: 0;
+
+} 
+.pricing .container .plan .plan-head::after {
+  top: 60%;
+  width: 0px;
+  height: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2195f322;
+  transition: var(--main-transition);
+}
+.pricing .container .plan:hover .plan-head::after {
+  height: 40%;
+  width: 100%;
+}
+.pricing .container .plan:hover .plan-head::before {
+  height: 60%;
+  transition-delay: 0.2s;
+}
+.pricing .container .plan:hover .label::before {
+  border-color: transparent transparent #e1f1fd transparent;
+  transition-delay: 0.2s;
+}
+
+.pricing .container .plan .plan-head .plan-title {
+  font-weight: 800;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+.pricing .container .plan .plan-head img {
+  width: 60px ;
+  max-width: 100%;
+  margin: 30px 0 20px;
+}
+.pricing .container .plan .plan-head span {
+  display: block;
+}
+.pricing .container .plan .plan-head .price {
+  font-size: 45px;
+  color: var(--main-color);
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.pricing .container .plan .plan-head .duration {
+  color: #777;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+.pricing .container .plan .plan-foot {
+  padding-bottom: 40px;
+}
+.pricing .container .plan .plan-foot .plan-features {
+  margin-bottom: 30px;
+}
+.pricing .container .plan .plan-foot .plan-features li {
+  padding: 15px;
+}
+.pricing .container .plan .plan-foot .plan-features li:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
+.pricing .container .plan .plan-foot .plan-features li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--main-color);
+  margin-right: 10px;
+}
+.pricing .container .plan .plan-foot .plan-link {
+  display: block;
+  width: fit-content;
+  background-color: white;
+  color: var(--main-color);
+  text-transform: capitalize;
+  font-weight: bold;
+  padding: 15px 25px;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: 2px solid var(--main-color);
+  transition: var(--main-transition);
+}
+.pricing .container .plan .plan-foot .plan-link:hover {
+  background-color: var(--alt-main-color);
+  border: 2px solid var(--alt-main-color);
+  color: white;
+}
+
+/* End pricing */
 /* Start Animation */
 @keyframes up-down {
   0% {
